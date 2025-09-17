@@ -8,48 +8,50 @@
 
     <!-- Judul -->
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Data BPS"
-        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"/>
 
-    <!-- Filter Tahun -->
+    <!-- Spinner Tahun -->
+    <Spinner
+        android:id="@+id/spinnerTahun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Tombol filter dan refresh -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical"
+        android:gravity="center_horizontal"
         android:layout_marginBottom="8dp">
-
-        <Spinner
-            android:id="@+id/spinnerTahun"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btnFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Filter"
-            android:layout_marginStart="8dp"/>
+            android:text="FILTER"/>
 
         <Button
             android:id="@+id/btnRefresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Refresh"
-            android:layout_marginStart="8dp"/>
+            android:text="REFRESH"
+            android:layout_marginStart="16dp"/>
     </LinearLayout>
 
-    <!-- Header Tabel -->
+    <!-- Header Table -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#E0E0E0"
+        android:background="@android:color/darker_gray"
         android:padding="8dp">
 
         <TextView
@@ -57,55 +59,47 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Tahun"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Kelompok Umur"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Laki-laki"
-            android:textStyle="bold" />
+            android:text="Jenis Kelamin"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Perempuan"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Total"
-            android:textStyle="bold" />
+            android:text="Nilai"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Satuan"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
     </LinearLayout>
 
-    <!-- List Data -->
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="true"
-        android:clipToPadding="false"
-        android:padding="8dp"
-        android:scrollbars="vertical"
-        android:outlineAmbientShadowColor="@android:color/black"
-        android:background="#ffeeaa" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp"/>
 
 </LinearLayout>

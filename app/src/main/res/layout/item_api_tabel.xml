@@ -3,30 +3,42 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:background="@color/teal_700"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/tvTahun"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Tahun"
-        android:textStyle="bold"/>
+        android:layout_weight="1"
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/tvKelompokUmur"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Kelompok Umur"/>
+        android:layout_weight="1"
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/tvJenisKelamin"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Jenis Kelamin"/>
+        android:layout_weight="1"
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/tvNilai"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Nilai"/>
+        android:layout_weight="1"
+        android:gravity="end"
+        android:textColor="@android:color/holo_blue_light"/>
+
+    <TextView
+        android:id="@+id/tvSatuan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@android:color/black"/>
 </LinearLayout>
