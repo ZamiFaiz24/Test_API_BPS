@@ -3,42 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@color/teal_700"
-    android:padding="16dp">
-
-    <TextView
-        android:id="@+id/tvTahun"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textColor="@android:color/black"/>
+    android:padding="12dp"
+    android:weightSum="4">
 
     <TextView
         android:id="@+id/tvKelompokUmur"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="@android:color/black"/>
+        android:text="0-4"
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvJenisKelamin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textColor="@android:color/black"/>
-
-    <TextView
-        android:id="@+id/tvNilai"
+        android:id="@+id/tvLakiLaki"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="end"
-        android:textColor="@android:color/holo_blue_light"/>
+        android:text="56.575" />
 
     <TextView
-        android:id="@+id/tvSatuan"
+        android:id="@+id/tvPerempuan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="@android:color/black"/>
+        android:gravity="end"
+        android:text="54.334" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:text="110.909" />
 </LinearLayout>

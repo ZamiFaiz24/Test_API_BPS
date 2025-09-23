@@ -6,34 +6,39 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.api_bps.R
-import com.example.api_bps.model_data.bpsdata.BpsData
+import com.example.api_bps.model_data.bpsdata.DataTableItem
+import java.text.NumberFormat
+import java.util.Locale
 
-class BpsApiAdapter(private var list: List<BpsData>) :
-    RecyclerView.Adapter<BpsApiAdapter.BpsViewHolder>() {
+class BpsApiAdapter(private var list: List<DataTableItem>) :
+    RecyclerView.Adapter<BpsApiAdapter.DataViewHolder>() {
 
-    inner class BpsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvTahun: TextView = view.findViewById(R.id.tvTahun)
+    inner class DataViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvKelompokUmur: TextView = view.findViewById(R.id.tvKelompokUmur)
-        val tvJenisKelamin: TextView = view.findViewById(R.id.tvJenisKelamin)
-        val tvNilai: TextView = view.findViewById(R.id.tvNilai)
+        val tvLakiLaki: TextView = view.findViewById(R.id.tvLakiLaki)
+        val tvPerempuan: TextView = view.findViewById(R.id.tvPerempuan)
+        val tvTotal: TextView = view.findViewById(R.id.tvTotal)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BpsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_api_tabel, parent, false)
-        return BpsViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_api_tabel, parent, false)
+        return DataViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: BpsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val item = list[position]
-        holder.tvTahun.text = "Tahun: ${item.tahun}"
-        holder.tvKelompokUmur.text = "Kelompok Umur: ${item.kelompokUmur}"
-        holder.tvJenisKelamin.text = "Jenis Kelamin: ${item.jenisKelamin}"
-        holder.tvNilai.text = "Nilai: ${item.nilai}" // atau item.total jika pakai total
+        val numberFormat = NumberFormat.getNumberInstance(Locale.Builder().setLanguage("id").setRegion("ID").build())
+
+        holder.tvKelompokUmur.text = item.kelompokUmur
+        holder.tvLakiLaki.text = item.lakiLaki?.let { numberFormat.format(it) } ?: "N/A"
+        holder.tvPerempuan.text = item.perempuan?.let { numberFormat.format(it) } ?: "N/A"
+        holder.tvTotal.text = item.total?.let { numberFormat.format(it) } ?: "N/A"
     }
 
     override fun getItemCount(): Int = list.size
 
-    fun updateData(newList: List<BpsData>) {
+    fun updateData(newList: List<DataTableItem>) {
         list = newList
         notifyDataSetChanged()
     }
